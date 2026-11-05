@@ -1,0 +1,725 @@
+/* Center the login block */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+/* Doctor Login Button */
+.doctor-login-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  background-color: #82aa76;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.doctor-login-btn:hover {
+    background-color: #5b864e;
+}
+
+/* Login container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+    padding-top: 0px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: center;
+}
+
+.login-logo{
+    padding-top: 30px;
+}
+
+/* Login input */
+.login-input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  direction: rtl; /* Ensure Hebrew text aligns properly */
+}
+
+.login-input:focus {
+  border-color: #82aa76;
+  outline: none;
+}
+
+/* Login button */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #82aa76;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-btn:hover {
+  background-color: #5b864e;
+}
+
+.error-message{
+  color: red;
+  font-weight: bold;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Adjust spacing between inputs */
+  width: 100%;
+}
+
+.half-width {
+  width: 50%; /* Make each input take half of the available space */
+}
+
+.register-link, .login-link{
+    direction: rtl; /* Ensure Hebrew text aligns properly */
+    cursor: pointer;
+}
+
+/* DOCTOR.css */
+
+/* General Styling */
+
+
+/* Full page layout */
+.doctor-ui {
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Centered title at the very top */
+.dashboard-header {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the title */
+    align-items: center;
+    position: relative; /* Allows absolute positioning for buttons */
+}
+
+/* Title should always be centered */
+.dashboard-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Logout and Add Patient buttons stay in top-right */
+.button-container {
+    position: absolute;
+    right: 10px;
+    top: -25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+/* Logout button */
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+.button-add-container{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+/* Add Patient button */
+.add-patient-btn, .add-image-btn {
+    padding: 12px 20px;
+    background-color: #82aa76;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.add-image-btn{
+    background-color: #76a8aa;
+}
+
+.add-image-btn:hover{
+    background-color: #47a4a7;
+}
+
+.add-patient-btn:hover {
+    background-color: #5b864e;
+}
+
+/* Table Styling */
+.table-container {
+    width: 80%;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.patient-table th, .patient-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.patient-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.patient-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.clickable-row {
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.clickable-row:hover {
+    background: #f1f1f1;
+}
+
+
+/* MODAL OVERLAY - Background blur effect */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MODAL BOX */
+.modal-content {
+    background: white;
+    padding: 30px;
+    padding-top: 0;
+    border-radius: 12px;
+    text-align: center;
+    width: 420px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Modal title */
+.modal-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input fields container */
+.modal-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* ROW for first name & last name */
+.modal-input-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+}
+
+/* Each input inside the row */
+.modal-input-row .modal-input {
+    flex: 1; /* Makes both fields equal width */
+}
+
+/* Input fields */
+.modal-input {
+    width: 90%;
+    margin: 0 auto;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.2s ease-in-out;
+    background-color: #f9f9f9;
+    text-align: right; /* Align text properly for Hebrew */
+}
+
+
+.modal-input2 {
+    width: 70%;
+    margin: 0 auto;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.2s ease-in-out;
+    background-color: #f9f9f9;
+    text-align: right; /* Align text properly for Hebrew */
+}
+
+/* Input focus effect */
+.modal-input:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: white;
+}
+
+/* Button container */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Fixes button size */
+.modal-btn {
+    flex: 1;
+    max-width: 120px;
+    text-align: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.modal-btn.add {
+    background-color: #28a745;
+    color: white;
+}
+
+.modal-btn.add:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.modal-btn.cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+.modal-btn.cancel:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* PatientPage.CSS */
+
+/* General Page Styling */
+.patient-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+}
+
+/* Patient Info Section */
+.patient-info {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+/* Add Session Button */
+.add-session-btn {
+    padding: 12px 20px;
+    margin: 20px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-session-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Session History Table */
+.session-history-container {
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.session-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.session-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+}
+
+.session-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    color: #333;
+}
+
+.session-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Download Button */
+.download-btn {
+    padding: 10px 15px;
+    background-color: #82aa76;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #5b864e;
+    transform: scale(1.05);
+}
+
+.hidden-report {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+}
+
+
+
+/* Go Back Button */
+.go-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.go-back-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Modal Styling */
+/* Session Modal Styling */
+.session-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.session-modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 50%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.session-modal-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.session-modal-label {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.session-modal-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.session-modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.session-modal-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.session-modal-btn.add {
+    background-color: #28a745;
+    color: white;
+}
+
+.session-modal-btn.add:hover {
+    background-color: #218838;
+}
+
+.session-modal-btn.cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+.session-modal-btn.cancel:hover {
+    background-color: #5a6268;
+}
+
+
+.session-delete-btn {
+    padding: 8px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.session-delete-btn:hover {
+    background-color: #c82333;
+}
+
+.patient-session-start-btn{
+    background-color: #82aa76;
+    color: white;
+}
+
+.patient-session-start-btn:hover{
+    background-color: #5b864e;
+}
+
+.patient-session-start-btn2{
+    background-color: #adadad;
+    color: white;
+}
+
+.patient-dashboard {
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: #f0f0f0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+
+
+.patient-dashboard-section {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.patient-dashboard-section2 {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.dashboard-barChart{
+    height: 80%;
+}
+
+
+.patient-session-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.patient-session-table th, .patient-session-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.patient-session-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.patient-session-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.patient-session-table th:nth-child(1),
+.patient-session-table td:nth-child(1) {
+    width: 33%;
+    text-align: center;
+}
+
+.patient-session-table th:nth-child(2),
+.patient-session-table td:nth-child(2) {
+    width: 33%;
+    text-align: center;
+}
+
+.patient-session-table th:nth-child(3),
+.patient-session-table td:nth-child(3) {
+    width: 34%;
+    text-align: center;
+}
+
+
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    background-color: #676767;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0px 25px 0px;
+    margin: 15px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    padding: 20px 20px 28px 20px;
+    background-color: #4caf50;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    transition: width 0.3s ease-in-out;
+}
+
+
+.blinking {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.4;
+    }
+}
